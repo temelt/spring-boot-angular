@@ -1,4 +1,4 @@
-function ListaComprasController($scope,$http) {
+function KisiController($scope,$http) {
 
     $scope.kisi = {
         id:null,
