@@ -1,0 +1,90 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <title>Kişi İşlemleri</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/toastr.css">
+    <link rel="stylesheet" href="css/application.css">
+    <style type="text/css">
+        .center_div {
+            margin: 0 auto;
+            width: 80%
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-controller="ListaComprasController">
+
+    <div class="row">
+        <div class="page-header">
+            <div class="span9">
+                <h1>Kişi Listesi</h1>
+            </div>
+            <div class="span3">
+                <input type="search" ng-model="search" placeholder="Arama">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <table id="lista-compras" class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Adres</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="item in items">
+                <td>{{ item.id }}</td>
+                <td>{{ item.ad }}</td>
+                <td>{{ item.soyad }}</td>
+                <td>{{ item.adres}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container center_div">
+        <h1>Yeni Kayıt</h1>
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-4">
+                    Adı
+                </div>
+                <div class="col-lg-8">
+                    <input class="form-control" ng-model="kisi.ad"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    Soyadı
+                </div>
+                <div class="col-lg-8">
+                    <input class="form-control" ng-model="kisi.soyad"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    Adres
+                </div>
+                <div class="col-lg-8">
+                    <input class="form-control" ng-model="kisi.adres"/>
+                </div>
+            </div>
+        </div>
+        <button ng-click="save()" class="btn btn-primary">Kaydet</button>
+        <button ng-click="close()" class="btn">close</button>
+    </div>
+
+</div>
+<script src="lib/jquery.min.js"></script>
+<script src="lib/angular.min.js"></script>
+<script src="lib/toastr.min.js"></script>
+<script src="app/controllers.js"></script>
+</body>
+</html>
